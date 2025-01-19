@@ -24,7 +24,33 @@ class Journal
         Console.Write("Your response: ");
         string response = Console.ReadLine();
 
-        JournalEntry newEntry = new JournalEntry(prompt, response);
+        Console.WriteLine("\nHow are you feeling today?");
+        Console.WriteLine("1. 😊 Happy");
+        Console.WriteLine("2. 😟 Stressed");
+        Console.WriteLine("3. 😴 Tired");
+        Console.WriteLine("4. 🤨 Confused");
+        Console.WriteLine("5. 😒 Annoyed");
+        Console.WriteLine("6. 😢 Sad");
+        Console.WriteLine("7. 😍 In Love");
+        Console.WriteLine("8. 🤮 Sick");
+        Console.Write("Choose a number to represent your mood: ");
+        string moodChoice = Console.ReadLine();
+
+        string mood = moodChoice switch
+        {
+            "1" => "😊 Happy",
+            "2" => "☹️ Stressed",
+            "3" => "😴 Tired",
+            "4" => "🤨 Confused",
+            "5" => "😒 Annoyed",
+            "6" => "😢 Sad",
+            "7" => "😍 In Love", 
+            "8" => "🤮 Sick",
+            _ => "Unknown mood" 
+        };
+
+
+        JournalEntry newEntry = new JournalEntry(prompt, response, mood);
         _entries.Add(newEntry);
 
         Console.WriteLine("Entry added successfully!\n");

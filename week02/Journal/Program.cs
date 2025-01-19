@@ -4,9 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        
         Journal myJournal = new Journal();
         string date = DateTime.Now.ToShortDateString();
-        JournalEntry entry = new JournalEntry("Prompt", "Response");
+        /*JournalEntry entry = new JournalEntry("Prompt", "Response");*/
 
         while (true)
         {
@@ -44,6 +46,8 @@ class Program
                     Console.WriteLine("Invalid option. Please enter a number between 1-5.");
                     break;
             }
+
+            
         }
     }
 }
